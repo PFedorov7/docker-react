@@ -8,3 +8,10 @@ before_install:
 
 script:
   - docker run -e CI=true pfedorov/docker-react npm run test -- --coverage
+
+deploy:
+  provider: gae
+  keyfile: docker-react-305015-fb5addd192a2.json
+  project: docker-react
+  on:
+    branch: master
